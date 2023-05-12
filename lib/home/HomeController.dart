@@ -3,21 +3,21 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
-  static HomeController get to => Get.find();
 
-  var scaffoldKey = GlobalKey<ScaffoldState>();
-
-  void openDrawer() {
-    scaffoldKey.currentState?.openDrawer();
-  }
-
-  void closeDrawer() {
-    scaffoldKey.currentState?.openEndDrawer();
-  }
+  List<Widget> news = [];
 
   @override
   void onInit() {
-    // TODO: implement onInit
     super.onInit();
+    loadNews();
   }
+
+  void loadNews() {
+    for (int i = 0; i < 5; i++) {
+      news.add(ListTile(leading: Text(i.toString()),
+        title: Text("Nachricht "),
+        trailing: Icon(Icons.star),));
+    }
+  }
+
 }

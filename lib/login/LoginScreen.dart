@@ -4,6 +4,7 @@ import 'package:flutter_login/flutter_login.dart';
 import 'package:get/get.dart';
 import 'package:hack_connect_frontend/home/HomeScreen.dart';
 import 'package:hack_connect_frontend/login/LoginController.dart';
+import 'package:hack_connect_frontend/ui_components/CustomAppBar.dart';
 
 const users = const {
   'kev': '123',
@@ -43,8 +44,9 @@ class LoginScreen extends StatelessWidget {
     return GetBuilder<LoginController>(
       init: LoginController(),
       builder: (controller) => Scaffold(
-        appBar: CupertinoNavigationBar(
-            leading: Text("Menu"), trailing: Text("Profil")),
+        appBar: CustomAppBar(
+          leadingButton: IconButton(onPressed: () => {}, icon: Container()),
+        ),
         body: FlutterLogin(
             userType: LoginUserType.name,
             onLogin: _authUser,

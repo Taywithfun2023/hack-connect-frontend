@@ -1,10 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hack_connect_frontend/home/HomeController.dart';
+import 'package:hack_connect_frontend/draft/HomeController.dart';
 import 'package:hack_connect_frontend/ui_components/CustomAppBarController.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
+
+  IconButton leadingButton;
+
+  CustomAppBar({required this.leadingButton});
+
   @override
   final Size preferredSize = Size.fromHeight(80);
 
@@ -15,10 +20,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         builder: (controller) => AppBar(
                 title: Text("Hack-Connect"),
                 toolbarHeight: 80,
-                leading: IconButton(
-                  icon: Icon(Icons.menu),
-                  onPressed: () => {HomeController.to.openDrawer()},
-                ),
+                leading: leadingButton,
                 actions: [
                   IconButton(
                       iconSize: 80,
