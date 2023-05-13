@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hack_connect_frontend/draft/HomeController.dart';
+import 'package:hack_connect_frontend/profile/ProfileScreen.dart';
 import 'package:hack_connect_frontend/ui_components/CustomAppBarController.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -24,7 +25,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 actions: [
                   IconButton(
                       iconSize: 80,
-                      onPressed: () => {},
+                      onPressed: () => {Get.to(ProfileScreen())},
                       icon: CircleAvatar(child: Text(controller.usernameCred)))
                 ]));
   }
